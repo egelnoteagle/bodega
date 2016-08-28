@@ -6,13 +6,17 @@ class PagesController < ApplicationController
   end
   
   def lotto
-    @numbers = []
-    6.times do |number|
-      @numbers << number.random(100)  
+    @page_title = 'Lotto'
+    number_list = []
+
+    6.times do
+      number_list << rand(1..99)
     end
+    @lucky_numbers = number_list.join(", ")
   end
 
-  def page_count
-
+  def page_visits
+    @count = 0
+    @count += 1
   end  
 end
